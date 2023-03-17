@@ -25,7 +25,14 @@ const getCategoryImages = async (req, res) => {
 };
 
 const getRandomProduct = async (req, res) => {
-  console.log("getting random product");
+  try {
+    const response = await fetch("https://fakestoreapi.com/products");
+    const data = await response.json();
+    const num = Math.floor(Math.random() * 20);
+    res.status(200).json(data[num]);
+  } catch (err) {
+    res.status(400).json({ err: err.message });
+  }
 };
 
 module.exports = { getCategoryImages, getRandomProduct };

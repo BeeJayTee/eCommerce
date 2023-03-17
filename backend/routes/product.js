@@ -7,8 +7,8 @@ const {
 
 const router = express.Router();
 
-router.use("/", getCategoryImages);
+router.get("/", getCategoryImages);
 
-router.use("/single", getRandomProduct);
+router.get("/single", getRandomProduct);
 
 module.exports = router;

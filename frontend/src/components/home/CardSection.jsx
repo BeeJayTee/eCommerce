@@ -16,16 +16,18 @@ const CardSection = () => {
   }, []);
 
   return (
-    <div className="CardSection container m-auto py-16 px-8 md:px-0">
-      <h2 className="text-2xl font-bold mb-6">Shop Our Top Categories</h2>
-      <div className="flex flex-col lg:flex-row gap-16 justify-center">
-        {products.map((product, i) => (
-          <CategoryCard
-            image={product.image}
-            category={product.category}
-            key={i}
-          />
-        ))}
+    <div className="CardSection py-16 px-8 md:px-0">
+      <div className="container m-auto">
+        <h2 className="text-md font-bold mb-6">Shop Our Top Categories</h2>
+        <div className="flex flex-col lg:flex-row gap-16 justify-center">
+          {products.map((product, i) => (
+            <CategoryCard
+              image={product.image}
+              category={product.category}
+              key={i}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
