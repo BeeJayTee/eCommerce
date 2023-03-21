@@ -7,7 +7,7 @@ const CardSection = () => {
 
   useEffect(() => {
     const getProductImages = async () => {
-      const response = await fetch("http://localhost:4141/products");
+      const response = await fetch("http://localhost:4141/products/images");
       const data = await response.json();
       setProducts(data.products);
     };

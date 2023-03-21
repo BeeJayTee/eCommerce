@@ -35,4 +35,16 @@ const getRandomProduct = async (req, res) => {
   }
 };
 
-module.exports = { getCategoryImages, getRandomProduct };
+const getProductCategories = async (req, res) => {
+  try {
+    const response = await fetch(
+      "https://fakestoreapi.com/products/categories"
+    );
+    const data = await response.json();
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(400).json({ err: err.message });
+  }
+};
+
+module.exports = { getCategoryImages, getRandomProduct, getProductCategories };

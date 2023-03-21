@@ -8,6 +8,7 @@ import {
 import Home from "./pages/Home";
 import Inforbar from "./components/global/Infobar";
 import Navbar from "./components/global/Navbar";
+import Footer from "./components/global/Footer";
 Navbar;
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
