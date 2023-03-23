@@ -7,7 +7,7 @@ const FeaturedProduct = () => {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const response = await fetch("http://localhost:4141/products/single");
+      const response = await fetch("http://localhost:4141/products/random");
       const data = await response.json();
       if (response.ok) {
         setProduct(data);
@@ -29,7 +29,12 @@ const FeaturedProduct = () => {
             <img src={product.image} alt="" className="w-full" />
           </div>
           <div className="px-8 md:px-0 md:w-1/2 lg:w-1/3">
-            <h2 className="text-2xl font-bold">{product.title}</h2>
+            <a
+              href={`/product/${product.id}`}
+              className="text-2xl font-bold hover:underline"
+            >
+              {product.title}
+            </a>
             <p className="text-slate-500">${product.price}</p>
             <StarRatings
               rating={rating}

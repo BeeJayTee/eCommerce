@@ -47,4 +47,20 @@ const getProductCategories = async (req, res) => {
   }
 };
 
-module.exports = { getCategoryImages, getRandomProduct, getProductCategories };
+const getSingleProduct = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const response = await fetch("https://fakestoreapi.com/products/" + id);
+    const json = await response.json();
+    res.status(200).json(json);
+  } catch (err) {
+    res.status(400).json({ err: err.message });
+  }
+};
+
+module.exports = {
+  getCategoryImages,
+  getRandomProduct,
+  getProductCategories,
+  getSingleProduct,
+};
