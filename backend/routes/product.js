@@ -2,6 +2,7 @@ const express = require("express");
 
 const {
   getCategoryImages,
+  getAllProducts,
   getRandomProduct,
   getProductCategories,
   getSingleProduct,
@@ -10,6 +11,8 @@ const {
 const router = express.Router();
 
 router.get("/images", getCategoryImages);
+
+router.get("/all", getAllProducts);
 
 router.get("/random", getRandomProduct);
 

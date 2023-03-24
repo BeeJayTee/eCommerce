@@ -24,6 +24,17 @@ const getCategoryImages = async (req, res) => {
   });
 };
 
+const getAllProducts = async (req, res) => {
+  try {
+    const response = await fetch("https://fakestoreapi.com/products");
+    const data = await response.json();
+    console.log(data);
+    res.status(200).json(data);
+  } catch (err) {
+    res.status(400).json({ err: err.message });
+  }
+};
+
 const getRandomProduct = async (req, res) => {
   try {
     const response = await fetch("https://fakestoreapi.com/products");
@@ -60,6 +71,7 @@ const getSingleProduct = async (req, res) => {
 
 module.exports = {
   getCategoryImages,
+  getAllProducts,
   getRandomProduct,
   getProductCategories,
   getSingleProduct,
