@@ -23,11 +23,11 @@ const Dropdown = () => {
 
   return (
     <select
-      className="select w-full max-w-xs border border-stone-200"
+      className="select w-full max-w-xs border border-stone-200 mb-16"
       defaultValue={category}
       onChange={(e) => handleChange(e)}
     >
-      <option>Select A Category</option>
+      <option value="">Select A Category</option>
       {categories.map((category, i) => (
         <option key={i}>{category[0].toUpperCase() + category.slice(1)}</option>
       ))}

@@ -6,7 +6,6 @@ import Dropdown from "../components/products/Dropdown";
 import ProductDisplay from "../components/products/ProductDisplay";
 
 const Products = () => {
-  const category = useCategoryStore((state) => state.category);
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
